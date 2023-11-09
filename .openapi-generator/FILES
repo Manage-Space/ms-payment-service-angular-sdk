@@ -10,7 +10,8 @@ index.ts
 model/badRequestError400Response.ts
 model/badRequestError400ResponseError.ts
 model/baseError.ts
-model/createPaymentTransactionRequest.ts
+model/createPaymentTransaction.ts
+model/createPaymentTransactionManual.ts
 model/createSetupIntent200Response.ts
 model/customerResponse.ts
 model/forbiddenError403Response.ts
@@ -23,6 +24,8 @@ model/internalServerError500ResponseError.ts
 model/models.ts
 model/paymentMethod.ts
 model/paymentMethodResponse.ts
+model/paymentTransactionRequest.ts
+model/paymentTransactionRequestRequest.ts
 model/paymentTransactionResponse.ts
 model/paymentTransactionResponsePaymentMethod.ts
 model/paymentTransactionStatus.ts

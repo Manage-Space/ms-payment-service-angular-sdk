@@ -21,8 +21,6 @@ import { Observable }                                        from 'rxjs';
 // @ts-ignore
 import { BadRequestError400Response } from '../model/badRequestError400Response';
 // @ts-ignore
-import { CreatePaymentTransactionRequest } from '../model/createPaymentTransactionRequest';
-// @ts-ignore
 import { CreateSetupIntent200Response } from '../model/createSetupIntent200Response';
 // @ts-ignore
 import { ForbiddenError403Response } from '../model/forbiddenError403Response';
@@ -34,6 +32,8 @@ import { GetPaymentTransactions200Response } from '../model/getPaymentTransactio
 import { GetTransactions200Response } from '../model/getTransactions200Response';
 // @ts-ignore
 import { InternalServerError500Response } from '../model/internalServerError500Response';
+// @ts-ignore
+import { PaymentTransactionRequest } from '../model/paymentTransactionRequest';
 // @ts-ignore
 import { UnauthorizedError401Response } from '../model/unauthorizedError401Response';
 
@@ -186,22 +186,22 @@ export class DefaultService {
      * Creates a payment transaction.
      * @param orgId The Organization ID
      * @param siteId The Site ID
-     * @param createPaymentTransactionRequest 
+     * @param paymentTransactionRequest 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public createPaymentTransaction(orgId: string, siteId: string, createPaymentTransactionRequest: CreatePaymentTransactionRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<GetPaymentTransactions200Response>;
-    public createPaymentTransaction(orgId: string, siteId: string, createPaymentTransactionRequest: CreatePaymentTransactionRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<GetPaymentTransactions200Response>>;
-    public createPaymentTransaction(orgId: string, siteId: string, createPaymentTransactionRequest: CreatePaymentTransactionRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<GetPaymentTransactions200Response>>;
-    public createPaymentTransaction(orgId: string, siteId: string, createPaymentTransactionRequest: CreatePaymentTransactionRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
+    public createPaymentTransaction(orgId: string, siteId: string, paymentTransactionRequest: PaymentTransactionRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<GetPaymentTransactions200Response>;
+    public createPaymentTransaction(orgId: string, siteId: string, paymentTransactionRequest: PaymentTransactionRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<GetPaymentTransactions200Response>>;
+    public createPaymentTransaction(orgId: string, siteId: string, paymentTransactionRequest: PaymentTransactionRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<GetPaymentTransactions200Response>>;
+    public createPaymentTransaction(orgId: string, siteId: string, paymentTransactionRequest: PaymentTransactionRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling createPaymentTransaction.');
         }
         if (siteId === null || siteId === undefined) {
             throw new Error('Required parameter siteId was null or undefined when calling createPaymentTransaction.');
         }
-        if (createPaymentTransactionRequest === null || createPaymentTransactionRequest === undefined) {
-            throw new Error('Required parameter createPaymentTransactionRequest was null or undefined when calling createPaymentTransaction.');
+        if (paymentTransactionRequest === null || paymentTransactionRequest === undefined) {
+            throw new Error('Required parameter paymentTransactionRequest was null or undefined when calling createPaymentTransaction.');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -255,7 +255,7 @@ export class DefaultService {
         return this.httpClient.request<GetPaymentTransactions200Response>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                body: createPaymentTransactionRequest,
+                body: paymentTransactionRequest,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
