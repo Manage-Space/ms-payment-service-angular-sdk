@@ -13,7 +13,7 @@
 
 export interface CustomerResponse { 
     /**
-     * Payment Provider\'s identifier for the customer
+     * Payment Provider\'s identifier for the customer.
      */
     paymentProviderId: string;
     /**

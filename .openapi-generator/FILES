@@ -29,6 +29,7 @@ model/paymentTransactionRequestRequest.ts
 model/paymentTransactionResponse.ts
 model/paymentTransactionResponsePaymentMethod.ts
 model/paymentTransactionStatus.ts
+model/paymentTransactionTypeEnum.ts
 model/transactionResponse.ts
 model/transactionStatusCodeNames.ts
 model/transactionStatusResponse.ts

@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { PaymentTransactionTypeEnum } from './paymentTransactionTypeEnum';
 import { PaymentTransactionStatus } from './paymentTransactionStatus';
 import { PaymentTransactionResponsePaymentMethod } from './paymentTransactionResponsePaymentMethod';
 
@@ -51,6 +52,7 @@ export interface PaymentTransactionResponse {
      */
     amount: number;
     paymentTransactionStatus: PaymentTransactionStatus;
+    paymentTransactionType: PaymentTransactionTypeEnum;
     paymentMethod: PaymentTransactionResponsePaymentMethod | null;
     /**
      * Client secret for use with payment provider.
@@ -64,6 +66,10 @@ export interface PaymentTransactionResponse {
      * Created at.
      */
     updatedAt: string | null;
+    /**
+     * Check number in case a payment transaction was check.
+     */
+    reference: string | null;
 }
 export namespace PaymentTransactionResponse {
 }

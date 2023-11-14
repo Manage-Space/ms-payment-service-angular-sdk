@@ -19,6 +19,7 @@ export * from './paymentTransactionRequestRequest';
 export * from './paymentTransactionResponse';
 export * from './paymentTransactionResponsePaymentMethod';
 export * from './paymentTransactionStatus';
+export * from './paymentTransactionTypeEnum';
 export * from './transactionResponse';
 export * from './transactionStatusCodeNames';
 export * from './transactionStatusResponse';
