@@ -20,7 +20,7 @@ export interface CreatePaymentTransactionManual {
     /**
      * Invoice line item ids.
      */
-    invoiceLineItemIds: string;
+    invoiceLineItemIds: Array<string>;
     paymentMethod?: PaymentMethod;
     /**
      * Account ID
