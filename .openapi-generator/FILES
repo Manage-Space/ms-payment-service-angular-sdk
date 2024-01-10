@@ -33,6 +33,7 @@ model/paymentTransactionTypeEnum.ts
 model/transactionResponse.ts
 model/transactionStatusCodeNames.ts
 model/transactionStatusResponse.ts
+model/transactionTypeEnum.ts
 model/unauthorizedError401Response.ts
 model/unauthorizedError401ResponseError.ts
 ng-package.json

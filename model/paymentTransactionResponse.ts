@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 import { PaymentTransactionTypeEnum } from './paymentTransactionTypeEnum';
+import { TransactionTypeEnum } from './transactionTypeEnum';
 import { PaymentTransactionStatus } from './paymentTransactionStatus';
 import { PaymentTransactionResponsePaymentMethod } from './paymentTransactionResponsePaymentMethod';
 
@@ -53,6 +54,7 @@ export interface PaymentTransactionResponse {
     amount: number;
     paymentTransactionStatus: PaymentTransactionStatus;
     paymentTransactionType: PaymentTransactionTypeEnum;
+    transactionType: TransactionTypeEnum;
     paymentMethod: PaymentTransactionResponsePaymentMethod | null;
     /**
      * Client secret for use with payment provider.
@@ -62,6 +64,14 @@ export interface PaymentTransactionResponse {
      * Created at.
      */
     createdAt: string;
+    /**
+     * Created by.
+     */
+    createdBy: string;
+    /**
+     * Invoice ID.
+     */
+    invoiceId: string;
     /**
      * Created at.
      */

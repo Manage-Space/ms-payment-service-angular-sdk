@@ -23,5 +23,6 @@ export * from './paymentTransactionTypeEnum';
 export * from './transactionResponse';
 export * from './transactionStatusCodeNames';
 export * from './transactionStatusResponse';
+export * from './transactionTypeEnum';
 export * from './unauthorizedError401Response';
 export * from './unauthorizedError401ResponseError';
