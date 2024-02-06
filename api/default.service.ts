@@ -502,15 +502,19 @@ export class DefaultService {
      * @param limit The maximum number of records to return per page.
      * @param dateFrom 
      * @param dateTo 
-     * @param accountId Account Id
+     * @param fromPrice The price to search from.
+     * @param toPrice The price to search to.
+     * @param accountId Comma-separated list of Account Id\&#39;s
+     * @param paymentTransactionStatus Comma-separated list of statuses (e.g., canceled,processing)
+     * @param paymentTransactionType Comma-separated list of payment methods (e.g., cash,credit_card)
      * @param invoiceId Invoice Id
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getPaymentTransactions(orgId: string, siteId: string, offset?: number, limit?: number, dateFrom?: string, dateTo?: string, accountId?: string, invoiceId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<GetPaymentTransactions200Response>;
-    public getPaymentTransactions(orgId: string, siteId: string, offset?: number, limit?: number, dateFrom?: string, dateTo?: string, accountId?: string, invoiceId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<GetPaymentTransactions200Response>>;
-    public getPaymentTransactions(orgId: string, siteId: string, offset?: number, limit?: number, dateFrom?: string, dateTo?: string, accountId?: string, invoiceId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<GetPaymentTransactions200Response>>;
-    public getPaymentTransactions(orgId: string, siteId: string, offset?: number, limit?: number, dateFrom?: string, dateTo?: string, accountId?: string, invoiceId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
+    public getPaymentTransactions(orgId: string, siteId: string, offset?: number, limit?: number, dateFrom?: string, dateTo?: string, fromPrice?: number, toPrice?: number, accountId?: string, paymentTransactionStatus?: string, paymentTransactionType?: string, invoiceId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<GetPaymentTransactions200Response>;
+    public getPaymentTransactions(orgId: string, siteId: string, offset?: number, limit?: number, dateFrom?: string, dateTo?: string, fromPrice?: number, toPrice?: number, accountId?: string, paymentTransactionStatus?: string, paymentTransactionType?: string, invoiceId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<GetPaymentTransactions200Response>>;
+    public getPaymentTransactions(orgId: string, siteId: string, offset?: number, limit?: number, dateFrom?: string, dateTo?: string, fromPrice?: number, toPrice?: number, accountId?: string, paymentTransactionStatus?: string, paymentTransactionType?: string, invoiceId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<GetPaymentTransactions200Response>>;
+    public getPaymentTransactions(orgId: string, siteId: string, offset?: number, limit?: number, dateFrom?: string, dateTo?: string, fromPrice?: number, toPrice?: number, accountId?: string, paymentTransactionStatus?: string, paymentTransactionType?: string, invoiceId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
         if (orgId === null || orgId === undefined) {
             throw new Error('Required parameter orgId was null or undefined when calling getPaymentTransactions.');
         }
@@ -535,9 +539,25 @@ export class DefaultService {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
             <any>dateTo, 'dateTo');
         }
+        if (fromPrice !== undefined && fromPrice !== null) {
+          localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+            <any>fromPrice, 'fromPrice');
+        }
+        if (toPrice !== undefined && toPrice !== null) {
+          localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+            <any>toPrice, 'toPrice');
+        }
         if (accountId !== undefined && accountId !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
             <any>accountId, 'accountId');
+        }
+        if (paymentTransactionStatus !== undefined && paymentTransactionStatus !== null) {
+          localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+            <any>paymentTransactionStatus, 'paymentTransactionStatus');
+        }
+        if (paymentTransactionType !== undefined && paymentTransactionType !== null) {
+          localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+            <any>paymentTransactionType, 'paymentTransactionType');
         }
         if (invoiceId !== undefined && invoiceId !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
